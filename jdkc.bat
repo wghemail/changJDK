@@ -1,40 +1,41 @@
 @echo off
 @echo ------------------------------------------------
-@echo SCOOP JAVA °æ±¾ÇĞ»»½Å±¾
+@echo SCOOP JAVA ç‰ˆæœ¬åˆ‡æ¢è„šæœ¬
 @echo ------------------------------------------------
-@echo µ±Ç°Java°æ±¾Îª:
+@echo å½“å‰Javaç‰ˆæœ¬ä¸º:
 call jdkv.bat
 @echo ------------------------------------------------
-@echo ÊäÈëÒªÊ¹ÓÃµÄjava°æ±¾¶ÔÓ¦µÄÑ¡Ïî:
-@echo Ñ¡Ïî   º¬Òå
-@echo 8      ÇĞ»»»·¾³ÎªJDK8
-@echo 11     ÇĞ»»»·¾³ÎªJDK11
-@echo 17     ÇĞ»»»·¾³ÎªJDK17
-@echo 18     ÇĞ»»»·¾³ÎªJDK18
+@echo è¾“å…¥è¦ä½¿ç”¨çš„javaç‰ˆæœ¬å¯¹åº”çš„é€‰é¡¹:
+@echo é€‰é¡¹   å«ä¹‰
+@echo 8      åˆ‡æ¢ç¯å¢ƒä¸ºJDK8
+@echo 11     åˆ‡æ¢ç¯å¢ƒä¸ºJDK11
+@echo 17     åˆ‡æ¢ç¯å¢ƒä¸ºJDK17
+@REM echo 18     åˆ‡æ¢ç¯å¢ƒä¸ºJDK18
 @echo ------------------------------------------------
-set java8=C:\Users\wgh-e\scoop\apps\openjdk8-redhat\current
-set java11=C:\Users\wgh-e\scoop\apps\openjdk11\current
-set java17=C:\Users\wgh-e\scoop\apps\openjdk\current
-set java18=C:\Users\wgh-e\scoop\apps\openjdk18\current
-set /P choose=ÇëÊäÈëÑ¡Ôñ:
+set user=%USERNAME%
+set java8=C:\Users\%user%\scoop\apps\openjdk8-redhat\current
+set java11=C:\Users\%user%\scoop\apps\openjdk11\current
+set java17=C:\Users\%user%\scoop\apps\openjdk17\current
+@REM set java18=C:\Users\%USERNAME%\scoop\apps\openjdk18\current
+set /P choose=è¯·è¾“å…¥é€‰æ‹©:
 	@REM sudo setx "JAVA_HOME" "%java8%" /m
-	@REM sudo Îª»ñÈ¡¹ÜÀíÔ±È¨ÏŞ£¬scoop°²×°
-	@REM /mÎªÏµÍ³»·¾³±äÁ¿£¬Ğësudo
-	@REM ÎŞ/m, ·ñÔòÎªµ±Ç°ÓÃ»§»·¾³±äÁ¿
+	@REM sudo ä¸ºè·å–ç®¡ç†å‘˜æƒé™ï¼Œscoopå®‰è£…
+	@REM /mä¸ºç³»ç»Ÿç¯å¢ƒå˜é‡ï¼Œé¡»sudo
+	@REM æ— /m, å¦åˆ™ä¸ºå½“å‰ç”¨æˆ·ç¯å¢ƒå˜é‡
 IF "%choose%" EQU "8" (
-	REM ĞŞ¸ÄJAVA_HOME»·¾³±äÁ¿Îª%java8%
+	REM ä¿®æ”¹JAVA_HOMEç¯å¢ƒå˜é‡ä¸º%java8%
 	setx "JAVA_HOME" "%java8%"
-	echo ÒÑ¾­ĞŞ¸Ä "JAVA_HOME" Îª %java8%
+	echo å·²ç»ä¿®æ”¹ "JAVA_HOME" ä¸º %java8%
 ) ELSE IF "%choose%" EQU "11" (
 	setx "JAVA_HOME" "%java11%"
-	echo ÒÑ¾­ĞŞ¸Ä "JAVA_HOME" Îª %java1%
+	echo å·²ç»ä¿®æ”¹ "JAVA_HOME" ä¸º %java11%
 ) ELSE IF "%choose%" EQU "17" (
 	setx "JAVA_HOME" "%java17%"
-	echo ÒÑ¾­ĞŞ¸Ä "JAVA_HOME" Îª %java17%
-) ELSE IF "%choose%" EQU "18" (
-	setx "JAVA_HOME" "%java18%"
-	echo ÒÑ¾­ĞŞ¸Ä "JAVA_HOME" Îª %java18%
+	echo å·²ç»ä¿®æ”¹ "JAVA_HOME" ä¸º %java17%
+@REM ) ELSE IF "%choose%" EQU "18" (
+@REM 	setx "JAVA_HOME" "%java18%"
+@REM 	echo å·²ç»ä¿®æ”¹ "JAVA_HOME" ä¸º %java18%
 ) ELSE (
-	echo Ñ¡Ôñ´íÎó£¬ÎŞĞŞ¸Ä£¡
+	echo é€‰æ‹©é”™è¯¯ï¼Œæ— ä¿®æ”¹ï¼
 )
 pause
